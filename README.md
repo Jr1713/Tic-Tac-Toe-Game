@@ -1,51 +1,48 @@
-🎮 Tic Tac Toe Game with AI
+# Tic Tac Toe Game 🎯
 
-An upgraded version of the classic Tic Tac Toe built using HTML, CSS, and JavaScript.
-This version now includes a single-player mode with AI, sound effects, and winning animations, delivering a more fun and dynamic gameplay experience.
+A browser-based Tic Tac Toe game using HTML, CSS, and JavaScript.  
+Play against another player (2-player mode) with turn switching, win/draw detection, and board reset.
 
-🧩 Features
+Live demo: [Tic Tac Toe Game by jr-delfin](https://codepen.io/jr-delfin/pen/ZYQLqPy)
 
-🎯 Two Modes:
+---
 
-Player vs Player — classic 2-player game.
+## Table of Contents
 
-Player vs AI — challenge a smart AI opponent!
+1. Features  
+2. Tools & Technologies Used  
+3. How It Works  
 
-🔊 Sound Effects: Audio feedback for moves, wins, and draws.
+---
 
-🌈 Winning Animations: Highlights and animations for the winning cells.
+## 1. Features
 
-🔁 Reset Function: Instantly restart the game.
+- 3×3 grid where players alternate placing **X** and **O**  
+- Detects win (3 in a row: horizontal, vertical, diagonal)  
+- Detects draw (when board fills without a winner)  
+- Reset button to clear the board and play again  
+- Responsive design: works on desktop and mobile  
+- Visual highlight of winning combination  
 
-📱 Responsive Design: Works smoothly on all screen sizes.
+---
 
-🛠️ Tools & Technologies Used
-Tool	Purpose
-HTML5	Game layout and structure
-CSS3	Styling, responsiveness, and animations
-JavaScript (ES6)	Game logic, AI decision-making, and interactions
-CodePen	Front-end development and live demo platform
-🚀 How It Works
-🎮 Gameplay
+## 2. Tools & Technologies Used
 
-Choose Player vs Player or Player vs AI.
+- **HTML5** — structure and elements  
+- **CSS3** — styling and responsive layout  
+- **JavaScript (ES6+)** — game logic, event handling, DOM updates  
+- **CodePen** — development & live demo environment  
 
-Click any cell to make your move.
+---
 
-The AI responds intelligently in single-player mode.
+## 3. How It Works
 
-The game checks for a win or draw after every turn.
-
-Winning cells are highlighted with animations and a sound plays.
-
-🧠 AI Logic
-
-The AI uses a simple algorithm to:
-
-Block the player’s winning move
-
-Try to win if possible
-
-Pick a random available cell otherwise
-
-This ensures a fair yet challenging opponent.
+- The game board is an array of length 9: `["", "", ..., ""]`  
+- Each cell is represented by a `.cell` in HTML with a `data-index`  
+- When a player clicks on a cell:
+  - JS checks if that cell is empty and the game is not over  
+  - It updates the board array, re-renders the board, and checks for winner  
+  - If a winner is found, it highlights the winning cells and shows a message  
+  - If no empty cells remain and no winner, it’s a draw  
+- Reset button clears the board, resets game state, and allows a new match  
+- The winning combination (if any) is found by checking all possible triplets  
